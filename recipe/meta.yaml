@@ -46,6 +46,7 @@ test:
   commands:
     - pip check
     - pytest
+    - p5dump -h
   imports:
     - pyfive
 
