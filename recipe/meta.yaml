@@ -41,6 +41,7 @@ test:
     - pytest-cov
     - pytest-html
     - pytest-xdist
+    - python-lzf
     - s3fs
   commands:
     - pip check
