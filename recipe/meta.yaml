@@ -1,5 +1,5 @@
 {% set name = "pyfive" %}
-{% set version = "1.0.0" %}
+{% set version = "1.0.1" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyfive-{{ version }}.tar.gz
-  sha256: 3851e99784e54ab4f30e19d6c59faa88535c40f714233a6e5f30a3fcd38aa511
+  sha256: 8401ae6b2a86cfc7ad454c838bef5587271e0998dca9e5158fe84b194bf2095d
 
 build:
   noarch: python
@@ -18,11 +18,11 @@ requirements:
   host:
     - python {{ python_min }}
     - pip !=21.3
-    - setuptools >=40.6.0
-    - setuptools_scm >=6.2
+    - setuptools >=80
+    - setuptools_scm >=8
   run:
     - python >={{ python_min }}
-    - numpy
+    - numpy >=2
 
 test:
   source_files:
