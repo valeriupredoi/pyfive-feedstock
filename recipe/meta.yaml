@@ -1,5 +1,5 @@
 {% set name = "pyfive" %}
-{% set version = "1.0.1" %}
+{% set version = "1.1.0" %}
 
 package:
   name: {{ name|lower }}
@@ -7,7 +7,7 @@ package:
 
 source:
   url: https://pypi.org/packages/source/{{ name[0] }}/{{ name }}/pyfive-{{ version }}.tar.gz
-  sha256: 8401ae6b2a86cfc7ad454c838bef5587271e0998dca9e5158fe84b194bf2095d
+  sha256: 10dfa192fa9317292bce9f1c7949b9fc44fb084129d5e89bbec4cf7699b3c092
 
 build:
   noarch: python
@@ -36,12 +36,12 @@ test:
     - h5netcdf
     - h5py
     - moto
-    - netcdf4
+    - netcdf4 !=1.7.4  # github.com/Unidata/netcdf4-python/issues/1464
     - pytest
     - pytest-cov
     - pytest-html
     - pytest-xdist
-    - python-lzf
+    - python-neo-lzf
     - s3fs
   commands:
     - pip check
